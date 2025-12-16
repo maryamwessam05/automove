@@ -451,6 +451,28 @@ color: #FFF;
     border: 1.075px solid var(--black, #191917);
     
 }
+.knowmore2:hover img{
+    filter: invert(0);
+    transform: rotate(-30deg);
+}
+.knowmore2{
+    background-color: #FFF !important;
+    display: flex;
+    transition: all 300ms ease;
+    padding: 10.549px 23.036px !important;
+
+}
+.knowmore2 img{
+    transition: all 300ms ease;
+
+}
+.knowmore2:hover{
+    background-color: #D6FF41 !important;
+    color: #191917;
+    box-shadow: 0 4.072px 0 0 #000000;
+    border: 1.075px solid var(--black, #191917);
+    
+}
 .carpos {
     align-self: flex-end;
     max-width: 100%;
@@ -492,4 +514,296 @@ a{
     padding-top: 5vw;
     padding-bottom: 5vw;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 7vw;
 }
+
+.brands h1{
+    color: var(--white, #FFF);
+text-align: center;
+font-family: Montserrat;
+font-size: 48px;
+font-style: normal;
+font-weight: 300;
+line-height: 105%; /* 50.4px */
+}
+.brandsvw {
+    overflow: hidden;
+    width: 1240px; /* adjust to show ~5 cards */
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.brandslist {
+    display: flex;
+    gap: 24px;
+    align-items: flex-end;
+    transition: transform 0.5s ease; /* smooth scroll */
+}
+
+.brandcard {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    border-radius: 29px;
+    background: var(--black, #191917);
+    box-shadow:
+        0 4px 8px rgba(0,0,0,0.25),
+        0 -4px 12px rgba(255,255,255,0.15) inset,
+        0 4px 12px rgba(255,255,255,0.15) inset;
+    transition: width 0.5s ease, padding 0.5s ease;
+}
+
+/* active card properties */
+.brandcard.active {
+    width: 276px;
+    padding: 90.776px 48.232px;
+}
+
+/* inactive card properties */
+.brandcard.inactive {
+    width: 223px;
+    padding: 44.992px 22.647px;
+}
+
+.brandcard img{
+    width: 100%;
+}
+
+
+
+.grad{
+width: 504px;
+height: 372px;    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(270deg, rgba(25, 25, 23, 0.00) 0%, #191917 100%);
+}
+.grad2{
+width: 504px;
+height: 372px;    position: absolute;
+    bottom: 0;
+    right: 0;
+background: linear-gradient(270deg, rgba(25, 25, 23, 0.00) 0%, #191917 100%);
+transform: rotate(180deg);
+}
+
+footer{
+  display: flex;
+width: 100%;
+height: 55vh;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 89px;
+font-family: "Roboto Condensed";
+border-top: 1px solid var(--green, #D6FF41);
+background: var(--black, #191917);
+color: white;
+}
+
+.footcol{
+  width: 25%;
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 20px;
+}
+
+.footerrow{
+  display: flex;
+width: 85%;
+align-items: flex-start;
+gap: 32px;
+
+}
+
+.footcol h4{
+  color: var(--beige, #FFFDF4);
+
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 28px; /* 140% */
+}
+.proftxt{
+  display: flex;
+width: 212px;
+flex-direction: column;
+align-items: flex-start;
+gap: 4px;
+}
+
+.proftxt h5{
+  color: #D6FF41;
+font-family: "Roboto Condensed";
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.proftxt span{
+  color: rgba(208, 208, 208, 0.50);
+font-family: "Roboto Condensed";
+font-size: 16px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+}
+.profiletab{
+  display: flex;
+align-items: center;
+gap: 26px;
+}
+.footcol p{
+  color: var(--beige, #FFFDF4);
+
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */
+}
+.footcol h5{
+  color: #D6FF41;
+
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 28px; /* 155.556% */
+}
+#x{
+  display: none;
+}
+
+.footcol a{
+  color: var(--beige, #FFFDF4);
+text-decoration: none;
+font-size: 16px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+}
+.footcol span{
+  filter: brightness(3.6);
+}
+.links{
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 8px;
+align-self: stretch;
+}
+
+.wheel{
+    background: #212121;
+    padding-top: 4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw;
+    position: relative;
+}
+
+.wheel h1{
+    color: var(--white, #FFF);
+text-align: center;
+font-family: Montserrat;
+font-size: 48px;
+font-style: normal;
+font-weight: 300;
+line-height: 124%; /* 59.52px */
+width: 80%;
+}
+
+.wheelcont{
+    width: 90%;
+    height: 94vh;
+    background-position: center;
+    background-image: url(img/Frame\ 81.svg);
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.arrowback , .arrowgo{
+    width: 37.161px;
+height: 110.975px;
+}
+
+.arrowback{
+    background-image: url(img/ar1.svg);
+    position: absolute;
+    left: 5%;
+    top: 48%;
+}
+
+.arrowgo{
+    background-image: url(img/ar2.svg);
+    position: absolute;
+    right: 5%;
+    top: 48%;
+}
+.carcard , .carcard1 , .carcard2{
+    display: flex;
+    width: 39vw;
+    padding: 21.435px 52.396px;
+    flex-direction: column;
+    align-items: center;
+    gap: 23.816px;
+    position: relative;
+    z-index: 9999;
+    border-radius: 14.29px;
+    background: #191917;
+    box-shadow: 0 4.763px 4.763px 0 rgba(0, 0, 0, 0.25);
+}
+
+.carcard h4 , .carcard1 h4 , .carcard2 h4{
+color: #FFF;
+text-align: center;
+font-family: Montserrat;
+font-size: 28.58px;
+font-style: normal;
+font-weight: 500;
+line-height: 124%; /* 35.439px */
+}
+
+.carcard h6 , .carcard1 h6 , .carcard2 h6{
+    color: #FFF;
+text-align: center;
+
+font-family: Montserrat;
+font-size: 21.435px;
+font-style: normal;
+font-weight: 300;
+line-height: 124%; /* 26.579px */
+}
+
+.wheelrot{
+    width: 100%;
+    height: 75vh;
+    overflow: hidden;
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.carcard1{
+    scale: 0;
+}
+
+.carcard2{
+    scale: 0;
+}
+
