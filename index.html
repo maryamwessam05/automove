@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="stylesheet.css">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
 <body>
     <header>
@@ -53,7 +53,8 @@
                     </h1>
                 </div>
                 <div class="heromodel">
-                    <img src="img/Frame 15.png" alt="">
+                    <model-viewer class="herocar" src="3d/2015_chevrolet_camaro_z28.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" interaction-prompt="none" shadow-intensity="1" inter camera-orbit="89.8deg 83.14deg 6.325m" field-of-view="24deg" disable-zoom auto-rotate> </model-viewer>
+                    <img class="greenshadow" src="img/Ellipse 2.svg" alt="">
                 </div>
                 
             </div>
@@ -117,7 +118,7 @@
                                 </div>
                             </div>
                             <div class="options">
-                                <div class="viewdeetg">
+                                <div onclick="activateFromButton(event, this)"class="viewdeetg">
                                     VIEW DETAILS 
                                     <img src="img/arrow.svg" alt="">
                                 </div>
@@ -127,44 +128,90 @@
                                 </a>
                             </div>
                         </div>
-                        <img class="carpos" src="img/poster (17) 1.png" data-active="img/poster (7) 1.png">       
-                 </div>
-                    <div class="modelcard">
-                        <div class="textmodel">
-                            <h2>Porshe <br> <span>Taycan</span></h2>
-                            <div class="feat">
-                                <div class="featsolo">
-                                    <div class="iconfeat">
+                        <div class="carmodelcard">
+                            <model-viewer class="greycar1" src="3d/2017_chevrolet_camaro_ss.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" interaction-prompt="none"  disable-zoom poster="poster.webp" disable-pan disable-tap shadow-intensity="1" camera-orbit="-278.1deg 81.44deg 8.491m" field-of-view="24.28deg"> </model-viewer>
 
-                                        <img src="img/1.svg" alt="">
-                                    </div>
-                                    <h5>Power performance</h5>
-                                </div>
-                                <div class="featsolo">
-                                    <img src="img/2.svg" alt="">
-                                    <h5>All-terrain capability</h5>
-                                </div>
-                                <div class="featsolo">
-                                    <img src="img/3.svg" alt="">
-                                    <h5>360° safety shield</h5>
-                                </div>
-                            </div>
-                            <div class="options">
-                                <div class="viewdeetg">
-                                    VIEW DETAILS 
-                                    <img src="img/arrow.svg" alt="">
-                                </div>
-                                <a href="product.html" class="viewdeetg knowmore">
-                                    KNOW MORE
-                                    <img src="img/arrow.svg" alt="">
-                                </a>
-                            </div>
                         </div>
-                        <img class="carpos" src="img/poster (17) 1.png" alt="">
                     </div>
                     <div class="modelcard">
                         <div class="textmodel">
-                            <h2>Porshe <br> <span>Taycan</span></h2>
+                            <h2>Nile Runner   <br> <span>Compact Sedan</span></h2>
+                            <div class="feat">
+                                <div class="featsolo">
+                                    <div class="iconfeat">
+
+                                        <img src="img/4.svg" alt="">
+                                    </div>
+                                    <h5>Fuel-efficient</h5>
+                                </div>
+                                <div class="featsolo">
+                                    <img src="img/5.svg" alt="">
+                                    <h5>Perfect for driving</h5>
+                                </div>
+                                <div class="featsolo">
+                                    <img src="img/6.svg" alt="">
+                                    <h5>Smart interior</h5>
+                                </div>
+                            </div>
+                            <div class="options">
+                                <div class="viewdeetg" onclick="activateFromButton(event, this)">
+                                    VIEW DETAILS 
+                                    <img src="img/arrow.svg" alt="">
+                                </div>
+                                <a href="product.html" class="viewdeetg knowmore">
+                                    KNOW MORE
+                                    <img src="img/arrow.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="carmodelcard">
+                            <model-viewer class="blackcar2" src="3d/bmw_m2_competition_grays_widebody.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" interaction-prompt="none"  disable-zoom disable-pan disable-tap shadow-intensity="1" camera-orbit="-278.1deg 81.44deg 8.6m" field-of-view="25deg"> </model-viewer>
+
+                        </div>
+                    </div>
+                    <div class="modelcard">
+                        <div class="textmodel">
+                            <h2>E-Volt
+                                   <br> <span>Fully Electric </span></h2>
+                            <div class="feat">
+                                <div class="featsolo">
+                                    <div class="iconfeat">
+
+                                        <img src="img/7.svg" alt="">
+                                    </div>
+                                    <h5>Zero emissions</h5>
+                                </div>
+                                <div class="featsolo">
+                                    <img src="img/8.svg" alt="">
+                                    <h5>Fast charging</h5>
+                                </div>
+                                <div class="featsolo">
+                                    <img src="img/9.svg" alt="">
+                                    <h5>Best-in-class range</h5>
+                                </div>
+                            </div>
+                            <div class="options">
+                                <div class="viewdeetg" onclick="activateFromButton(event, this)">
+                                    VIEW DETAILS 
+                                    <img src="img/arrow.svg" alt="">
+                                </div>
+                                <a href="product.html" class="viewdeetg knowmore">
+                                    KNOW MORE
+                                    <img src="img/arrow.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="carmodelcard">
+                            <model-viewer class="blackcar2" src="3d/2017_chevrolet_camaro_ss red.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" interaction-prompt="none"  disable-zoom disable-pan disable-tap shadow-intensity="1" camera-orbit="-278.1deg 81.44deg 8.6m" field-of-view="25deg"> </model-viewer>
+
+                        </div>                    </div>
+                   
+                </div>
+                <div class="modelslist">
+                    <div class="modelcard">
+                        <div class="textmodel">
+                            <h2>Revani
+                                 <br> <span>Beast</span></h2>
                             <div class="feat">
                                 <div class="featsolo">
                                     <div class="iconfeat">
@@ -183,7 +230,7 @@
                                 </div>
                             </div>
                             <div class="options">
-                                <div class="viewdeetg">
+                                <div onclick="activateFromButton(event, this)"class="viewdeetg">
                                     VIEW DETAILS 
                                     <img src="img/arrow.svg" alt="">
                                 </div>
@@ -193,14 +240,92 @@
                                 </a>
                             </div>
                         </div>
-                        <img class="carpos" src="img/poster (17) 1.png" alt="">
+                        <div class="carmodelcard">
+                            <model-viewer class="greycar1" data-model="revani" interaction-prompt="none"  disable-zoom disable-pan disable-tap src="3d/2016_rezvani_beast_x.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" camera-orbit="-278.1deg 81.44deg 0.08047m" field-of-view="23deg"> </model-viewer>
+
+                        </div>
+                    </div>
+                    <div class="modelcard">
+                        <div class="textmodel">
+                            <h2>TVR   <br> <span>Sagaris</span></h2>
+                            <div class="feat">
+                                <div class="featsolo">
+                                    <div class="iconfeat">
+
+                                        <img src="img/4.svg" alt="">
+                                    </div>
+                                    <h5>Fuel-efficient</h5>
+                                </div>
+                                <div class="featsolo">
+                                    <img src="img/5.svg" alt="">
+                                    <h5>Perfect for driving</h5>
+                                </div>
+                                <div class="featsolo">
+                                    <img src="img/6.svg" alt="">
+                                    <h5>Smart interior</h5>
+                                </div>
+                            </div>
+                            <div class="options">
+                                <div class="viewdeetg" onclick="activateFromButton(event, this)">
+                                    VIEW DETAILS 
+                                    <img src="img/arrow.svg" alt="">
+                                </div>
+                                <a href="product.html" class="viewdeetg knowmore">
+                                    KNOW MORE
+                                    <img src="img/arrow.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="carmodelcard">
+                            <model-viewer class="blackcar2" data-model="tvr" src="3d/2006_tvr_sagaris.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" interaction-prompt="none"  disable-zoom disable-pan disable-tap camera-orbit="-278.1deg 81.44deg 0.07354m" field-of-view="22.83deg"> </model-viewer>
+
+
+                        </div>
+                    </div>
+                    <div class="modelcard">
+                        <div class="textmodel">
+                            <h2>Porsche
+                                   <br> <span>Carrera </span></h2>
+                            <div class="feat">
+                                <div class="featsolo">
+                                    <div class="iconfeat">
+
+                                        <img src="img/7.svg" alt="">
+                                    </div>
+                                    <h5>Zero emissions</h5>
+                                </div>
+                                <div class="featsolo">
+                                    <img src="img/8.svg" alt="">
+                                    <h5>Fast charging</h5>
+                                </div>
+                                <div class="featsolo">
+                                    <img src="img/9.svg" alt="">
+                                    <h5>Best-in-class range</h5>
+                                </div>
+                            </div>
+                            <div class="options">
+                                <div class="viewdeetg" onclick="activateFromButton(event, this)">
+                                    VIEW DETAILS 
+                                    <img src="img/arrow.svg" alt="">
+                                </div>
+                                <a href="product.html" class="viewdeetg knowmore">
+                                    KNOW MORE
+                                    <img src="img/arrow.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="carmodelcard">
+                            <model-viewer class="blackcar2"  src="3d/2006_porsche_carrera_gt.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" interaction-prompt="none"  disable-zoom disable-pan disable-tap camera-orbit="-278.1deg 81.44deg 7.925m" field-of-view="21.5deg"> </model-viewer>
+
+                        </div>                    
                     </div>
                    
                 </div>
                 <div class="modelslist">
                     <div class="modelcard">
                         <div class="textmodel">
-                            <h2>Porshe <br> <span>Taycan</span></h2>
+                            <h2>Xiaomi
+                                 <br> <span>SU7</span></h2>
                             <div class="feat">
                                 <div class="featsolo">
                                     <div class="iconfeat">
@@ -219,7 +344,7 @@
                                 </div>
                             </div>
                             <div class="options">
-                                <div class="viewdeetg">
+                                <div onclick="activateFromButton(event, this)"class="viewdeetg">
                                     VIEW DETAILS 
                                     <img src="img/arrow.svg" alt="">
                                 </div>
@@ -229,30 +354,34 @@
                                 </a>
                             </div>
                         </div>
-                        <img class="carpos" src="img/poster (17) 1.png" alt="">
+                        <div class="carmodelcard">
+                            <model-viewer class="greycar1" data-model="su7"  src="3d/2024_xiaomi_su7_max.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" interaction-prompt="none"  disable-zoom poster="poster.webp" disable-pan disable-tap camera-orbit="-278.1deg 81.44deg 0.08798m" field-of-view="22.37deg"> </model-viewer>
+
+                        </div>
                     </div>
                     <div class="modelcard">
                         <div class="textmodel">
-                            <h2>Porshe <br> <span>Taycan</span></h2>
+                            <h2>Arrinera
+                                 <br> <span>Hustara </span></h2>
                             <div class="feat">
                                 <div class="featsolo">
                                     <div class="iconfeat">
 
-                                        <img src="img/1.svg" alt="">
+                                        <img src="img/4.svg" alt="">
                                     </div>
-                                    <h5>Power performance</h5>
+                                    <h5>Fuel-efficient</h5>
                                 </div>
                                 <div class="featsolo">
-                                    <img src="img/2.svg" alt="">
-                                    <h5>All-terrain capability</h5>
+                                    <img src="img/5.svg" alt="">
+                                    <h5>Perfect for driving</h5>
                                 </div>
                                 <div class="featsolo">
-                                    <img src="img/3.svg" alt="">
-                                    <h5>360° safety shield</h5>
+                                    <img src="img/6.svg" alt="">
+                                    <h5>Smart interior</h5>
                                 </div>
                             </div>
                             <div class="options">
-                                <div class="viewdeetg">
+                                <div class="viewdeetg" onclick="activateFromButton(event, this)">
                                     VIEW DETAILS 
                                     <img src="img/arrow.svg" alt="">
                                 </div>
@@ -262,30 +391,35 @@
                                 </a>
                             </div>
                         </div>
-                        <img class="carpos" src="img/poster (17) 1.png" alt="">
+                        <div class="carmodelcard">
+                            <model-viewer class="blackcar2" data-model="arri" src="3d/2021_arrinera_e-hussarya.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" interaction-prompt="none"  disable-zoom disable-pan disable-tap  camera-orbit="-278.1deg 81.44deg 0.08041m" field-of-view="21.55deg"> </model-viewer>
+
+
+                        </div>
                     </div>
                     <div class="modelcard">
                         <div class="textmodel">
-                            <h2>Porshe <br> <span>Taycan</span></h2>
+                            <h2>Tesla
+                                   <br> <span>Model 3</span></h2>
                             <div class="feat">
                                 <div class="featsolo">
                                     <div class="iconfeat">
 
-                                        <img src="img/1.svg" alt="">
+                                        <img src="img/7.svg" alt="">
                                     </div>
-                                    <h5>Power performance</h5>
+                                    <h5>Zero emissions</h5>
                                 </div>
                                 <div class="featsolo">
-                                    <img src="img/2.svg" alt="">
-                                    <h5>All-terrain capability</h5>
+                                    <img src="img/8.svg" alt="">
+                                    <h5>Fast charging</h5>
                                 </div>
                                 <div class="featsolo">
-                                    <img src="img/3.svg" alt="">
-                                    <h5>360° safety shield</h5>
+                                    <img src="img/9.svg" alt="">
+                                    <h5>Best-in-class range</h5>
                                 </div>
                             </div>
                             <div class="options">
-                                <div class="viewdeetg">
+                                <div class="viewdeetg" onclick="activateFromButton(event, this)">
                                     VIEW DETAILS 
                                     <img src="img/arrow.svg" alt="">
                                 </div>
@@ -295,112 +429,14 @@
                                 </a>
                             </div>
                         </div>
-                        <img class="carpos" src="img/poster (17) 1.png" alt="">
+                        <div class="carmodelcard">
+                            <model-viewer class="blackcar2" data-model="gre" src="3d/2016_arrinera_hussarya_gt.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" interaction-prompt="none"  disable-zoom disable-pan disable-tap camera-orbit="-278.1deg 81.44deg 0.09239m" field-of-view="22.28deg"> </model-viewer>
+
+                        </div>                    
                     </div>
                    
                 </div>
-                <div class="modelslist">
-                    <div class="modelcard">
-                        <div class="textmodel">
-                            <h2>Porshe <br> <span>Taycan</span></h2>
-                            <div class="feat">
-                                <div class="featsolo">
-                                    <div class="iconfeat">
-
-                                        <img src="img/1.svg" alt="">
-                                    </div>
-                                    <h5>Power performance</h5>
-                                </div>
-                                <div class="featsolo">
-                                    <img src="img/2.svg" alt="">
-                                    <h5>All-terrain capability</h5>
-                                </div>
-                                <div class="featsolo">
-                                    <img src="img/3.svg" alt="">
-                                    <h5>360° safety shield</h5>
-                                </div>
-                            </div>
-                            <div class="options">
-                                <div class="viewdeetg">
-                                    VIEW DETAILS 
-                                    <img src="img/arrow.svg" alt="">
-                                </div>
-                                <a href="product.html" class="viewdeetg knowmore">
-                                    KNOW MORE
-                                    <img src="img/arrow.svg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <img class="carpos" src="img/poster (17) 1.png" alt="">
-                    </div>
-                    <div class="modelcard">
-                        <div class="textmodel">
-                            <h2>Porshe <br> <span>Taycan</span></h2>
-                            <div class="feat">
-                                <div class="featsolo">
-                                    <div class="iconfeat">
-
-                                        <img src="img/1.svg" alt="">
-                                    </div>
-                                    <h5>Power performance</h5>
-                                </div>
-                                <div class="featsolo">
-                                    <img src="img/2.svg" alt="">
-                                    <h5>All-terrain capability</h5>
-                                </div>
-                                <div class="featsolo">
-                                    <img src="img/3.svg" alt="">
-                                    <h5>360° safety shield</h5>
-                                </div>
-                            </div>
-                            <div class="options">
-                                <div class="viewdeetg">
-                                    VIEW DETAILS 
-                                    <img src="img/arrow.svg" alt="">
-                                </div>
-                                <a href="product.html" class="viewdeetg knowmore">
-                                    KNOW MORE
-                                    <img src="img/arrow.svg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <img class="carpos" src="img/poster (17) 1.png" alt="">
-                    </div>
-                    <div class="modelcard">
-                        <div class="textmodel">
-                            <h2>Porshe <br> <span>Taycan</span></h2>
-                            <div class="feat">
-                                <div class="featsolo">
-                                    <div class="iconfeat">
-
-                                        <img src="img/1.svg" alt="">
-                                    </div>
-                                    <h5>Power performance</h5>
-                                </div>
-                                <div class="featsolo">
-                                    <img src="img/2.svg" alt="">
-                                    <h5>All-terrain capability</h5>
-                                </div>
-                                <div class="featsolo">
-                                    <img src="img/3.svg" alt="">
-                                    <h5>360° safety shield</h5>
-                                </div>
-                            </div>
-                            <div class="options">
-                                <div class="viewdeetg">
-                                    VIEW DETAILS 
-                                    <img src="img/arrow.svg" alt="">
-                                </div>
-                                <a href="product.html" class="viewdeetg knowmore">
-                                    KNOW MORE
-                                    <img src="img/arrow.svg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <img class="carpos" src="img/poster (17) 1.png" alt="">
-                    </div>
-                   
-                </div>
+                
             </div>
         </section>
 
