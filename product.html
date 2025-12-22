@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AutoMove</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    </head>
+<body>
+    <header>
+        <nav>
+            <img src="img/logo.svg" alt="">
+            <ul>
+                <li >
+                    <a class="selected" href="index.html">Home</a>
+                    <img src="img/Ellipse 1.svg" alt="">
+                </li>
+                <li>
+                    <a href="">About Us</a>
+                </li>
+                <li>
+                    <a href="">Products</a>
+                </li>
+                <li>
+                    <a href="">Services</a>
+                </li>
+            </ul>
+            <button>Contact</button>
+        </nav>
+    </header>
+    <main>
+        <section class="hero_prod">
+            <div class="herotitle_prod">
+                <h1>TAYCAN</h1>
+                <div class="prodmodel">
+                    <model-viewer class="productone" src="3d/2017_chevrolet_camaro_ss.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" interaction-prompt="none"  disable-zoom poster="poster.webp" auto-rotate shadow-intensity="0.5" camera-orbit="-278.1deg 81.44deg 8.491m" field-of-view="16deg"> </model-viewer>
+                    <img class="curved" src="img/Ellipse 5.svg" alt="">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="data.js"></script>
+</body>
+</html>
