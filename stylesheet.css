@@ -31,6 +31,7 @@ z-index: 99999999999;
 nav{
     width: 95%;
     display: flex;
+    height: 47%;
     flex-direction: row;
     justify-content: space-between;
 }
@@ -38,8 +39,10 @@ nav{
 ul{
     list-style: none;
     display: flex;
-align-items: center;
-gap: 79px;
+    align-items: center;
+    justify-content: space-between;
+    /* gap: 79px; */
+    width: 43%;
 }
 
 li a{
@@ -74,16 +77,16 @@ li a:hover{
 
 nav button{
     display: flex;
-width: 9%;
-    height: 4.5vh;
-justify-content: center;
-align-items: center;
-border-radius: 37px;
-background: var(--green, #D6FF41);
-outline: none;
-border: none;
-cursor: pointer;
-transition: all 300ms ease;
+    width: 10%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 116px;
+    background: var(--green, #D6FF41);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 300ms ease;
 }
 
 nav button:hover{
@@ -566,7 +569,7 @@ line-height: 105%; /* 50.4px */
     margin: 0 auto;
     position: relative;
     display: flex;
-    height: 36vh;
+    height: 40vh;
     justify-content: center;
 }
 
@@ -672,15 +675,15 @@ line-height: 28px; /* 140% */
 }
 .proftxt{
   display: flex;
-width: 212px;
+width: 100%;
 flex-direction: column;
 align-items: flex-start;
 gap: 4px;
 }
 
 .proftxt h5{
-  color: #D6FF41;
-font-family: "Roboto Condensed";
+  color: #212121;
+font-family: "Poppins";
 font-size: 24px;
 font-style: normal;
 font-weight: 400;
@@ -688,8 +691,8 @@ line-height: normal;
 }
 
 .proftxt span{
-  color: rgba(208, 208, 208, 0.50);
-font-family: "Roboto Condensed";
+  color: rgba(46, 45, 45, 0.622);
+font-family: "Poppins";
 font-size: 16px;
 font-style: normal;
 font-weight: 300;
@@ -718,6 +721,7 @@ line-height: 28px; /* 155.556% */
 }
 #x{
   display: none;
+  cursor: pointer;
 }
 
 .footcol a{
@@ -769,6 +773,7 @@ width: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     position: relative;
 }
 
@@ -929,7 +934,295 @@ line-height: normal;
 }
 .curved{
     position: absolute;
-    bottom: 0;
-    left: 24%;
+    bottom: -75px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: -99;
+}
+
+.burger{
+  display: none;
+  cursor: pointer;
+}
+.burgermenu{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  z-index: 999999999;
+  background: #D6FF41;
+  position: absolute;
+  left: 0;
+  top: -105vh;
+  transition: top 0.4s ease;
+}
+.burgermenu.active {
+  top: 0;                 
+}
+
+.burgerlist{
+  display: flex;
+  width: 170px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
+}
+
+
+.burgerlist a{
+color: var(--black, #191917);
+text-align: center;
+font-family: Montserrat;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+@media (min-width: 600px) and (max-width: 1070px) {
+    .navlogo{
+        width: 18%;
+    }
+
+    ul{
+        width: 50%;
+    }
+
+    main{
+        margin-top: 115px;
+    }
+    nav button{
+        width: 13%;
+    }
+    .loc h6, .p p{
+        font-size: 10px;
+    }
+    .herotitle h1{
+        font-size: 7vw;
+
+    }
+
+    .heromodel{
+        margin-top: -17%;
+        width: 96%;
+    height: 62vh;
+    }
+
+    .herocar{
+        height: 84%;
+    }
+    .half1_abt h2 , .stat1 h3{
+        font-size: 3vw;
+    }
+    .deet p{
+        font-size: 1.8vw;
+    }
+    .stat1 span{
+        font-size: 1.5vw;
+        line-height: 124%;
+    }
+    .modelcont h1 , .brands h1 , .wheel h1{
+        font-size: 4vw;
+    }
+    .modelcard{
+        border-radius: 15px;
+    }
+    .textmodel h2{
+        font-size: 2.4vw;
+    }
+    .featsolo h5{
+        font-size: 1.4vw;
+    }
+    
+    .featsolo img{
+        width: 20px;
+    }
+    .feat{
+        gap: 5px;
+    }
+    .viewdeetg{
+        font-size: 12px;
+    }
+    .textmodel{
+        width: 90%;
+        gap: 1.5vw;
+    }
+    .greycar1 , .blackcar2{
+        height: 70%;
+    }
+    .modelcard.active model-viewer {
+    transform: translateX(-28%) translateY(2%) scale(1.5);
+}
+    .brandslist{
+        gap: 18px;
+    }
+
+    .brandcard{
+        width: 24vw;
+        border-radius: 15px
+    }
+    .carcard{
+        width: 57vw;
+    }
+    .wheelrota{
+        width: 100%;
+    }
+    .arrowback , .arrowgo{
+        top: 20%;
+    }
+    .footerrow{
+        width: 90%;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 600px){
+     ul{
+        display: none;
+     }
+     .navlogo{
+        width: 25vw;
+     }
+
+       .burger{
+    display: flex;
+    width: 6vw;
+    
+  }
+
+  header button{
+    display: none;
+  }
+
+  #x{
+    display: block;
+  }
+  nav{
+    width: 85%;
+  }
+.row1_hero{
+    display: none;
+}
+.herotitle h1{
+    font-size: 7vw;
+}
+.heromodel{
+        width: 100%;
+    height: 45vh;
+    margin-top: -20%;
+}
+.herocar{
+    height: 57%;
+}
+.scroll{
+    top: 25%;
+    z-index: 9999999;
+}
+.abtcont{
+    flex-direction: column;
+    gap: 5vw;
+    width: 90%;
+}
+
+.half1_abt , .half2_abt{
+    width: 100%;
+
+}
+
+.half1_abt h2 , .stat1 h3{
+    font-size: 5.5vw;}
+
+.deet p{
+    font-size: 3vw;}
+
+.stat1 span{
+    font-size: 2.5vw;}
+
+
+    .stats{
+            display: flex;
+    justify-content: center;
+    padding-top: 7vw;
+    gap: 30px;
+    }
+
+    .deet{
+        padding: 7vw 0;
+    }
+    .modelcont{
+        width: 90%;
+        gap: 9vw;
+    }
+    .modelcont h1 , .brands h1 , .wheel h1{
+        font-size: 6vw;
+        width: 95%;
+    }
+    .modelslist{
+        flex-direction: column;
+        height: auto;
+        gap: 8vw;
+    }
+    .modelcard{
+        width: 100%;
+        height: auto;
+        padding: 9vw 0 8vw 6vw;
+    }
+    .modelcard.active {
+
+    flex: 2;
+    background: #D6FF41;
+    flex-direction: column;
+}
+.greenshadow{
+    width: 100%;
+    bottom: 80px;
+}
+.modelcard.active model-viewer {
+    transform: translateX(-5px) translateY(0%) scale(1);
+}
+.brandcard{
+    width: 40vw;
+}
+
+.brands{
+    padding-top: 7vw;
+    padding-bottom: 14vw;
+}
+
+.carcard{
+    width: 85vw;
+    gap: 15px;
+}
+.carcard h4 , .carcard1 h4 , .carcard2 h4{
+    font-size: 5vw;}
+
+    .carcard h6 , .carcard1 h6 , .carcard2 h6{
+        font-size: 3vw;
+    }
+
+    .wheelrota{
+        width: 100%;
+    }
+
+    .wheelcont{
+        width: 100%;
+    }
+    .wheel{
+        padding-top: 12vw;
+    }
+    .footerrow{
+        flex-direction: column;
+        width: 90%;
+        gap: 50px;
+    }
+    footer{
+        height: auto;
+        padding: 8vw 0;
+    }
+    .footcol{
+        width: 100%;
+    }
 }

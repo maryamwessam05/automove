@@ -14,7 +14,7 @@
 <body>
     <header>
         <nav>
-            <img src="img/logo.svg" alt="">
+            <img class="navlogo" src="img/logo.svg" alt="">
             <ul>
                 <li >
                     <a class="selected" href="">Home</a>
@@ -30,8 +30,26 @@
                     <a href="">Services</a>
                 </li>
             </ul>
+            <img class="burger" src="img/logow.svg" alt="">
             <button>Contact</button>
         </nav>
+        <div class="burgermenu">
+            <img src="img/logobur.svg" alt="">
+            <div class="burgerlist">
+                <a class="burgerlink" href="index.html">HOME</a>
+                <a class="burgerlink" href="menu.html">MENU</a>
+                <a class="burgerlink" href="about.html">ABOUT</a>
+                <a class="burgerlink" href="reviews.html">REVIEWS</a>
+                <a class="burgerlink" href="contact.html">CONTACT</a>
+            <div class="profiletab">
+                <img src="img/profileb.svg" alt="">
+                <div class="proftxt">
+                    <h5>Maryam Wessam</h5>
+                    <span>maryamwessam2005@gmail.com</span>
+                </div>
+            </div>
+            <img id="x" src="img/close.svg" alt="">
+        </div>
     </header>
     <main>
         <section class="hero">
@@ -53,7 +71,7 @@
                     </h1>
                 </div>
                 <div class="heromodel">
-                    <model-viewer class="herocar" src="3d/2015_chevrolet_camaro_z28.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" interaction-prompt="none" shadow-intensity="1" inter camera-orbit="89.8deg 83.14deg 6.325m" field-of-view="24deg" disable-zoom auto-rotate> </model-viewer>
+                    <model-viewer class="herocar" src="3d/2015_chevrolet_camaro_z28.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" interaction-prompt="none" shadow-intensity="0.5" inter camera-orbit="89.8deg 83.14deg 6.325m" disable-tap field-of-view="24deg" disable-zoom auto-rotate> </model-viewer>
                     <img class="greenshadow" src="img/Ellipse 2.svg" alt="">
                 </div>
                 
@@ -102,10 +120,7 @@
                             <h2>Porshe <br> <span>Taycan</span></h2>
                             <div class="feat">
                                 <div class="featsolo">
-                                    <div class="iconfeat">
-
                                         <img src="img/1.svg" alt="">
-                                    </div>
                                     <h5>Power performance</h5>
                                 </div>
                                 <div class="featsolo">
@@ -138,10 +153,7 @@
                             <h2>Nile Runner   <br> <span>Compact Sedan</span></h2>
                             <div class="feat">
                                 <div class="featsolo">
-                                    <div class="iconfeat">
-
                                         <img src="img/4.svg" alt="">
-                                    </div>
                                     <h5>Fuel-efficient</h5>
                                 </div>
                                 <div class="featsolo">
@@ -175,10 +187,8 @@
                                    <br> <span>Fully Electric </span></h2>
                             <div class="feat">
                                 <div class="featsolo">
-                                    <div class="iconfeat">
 
                                         <img src="img/7.svg" alt="">
-                                    </div>
                                     <h5>Zero emissions</h5>
                                 </div>
                                 <div class="featsolo">
@@ -214,10 +224,8 @@
                                  <br> <span>Beast</span></h2>
                             <div class="feat">
                                 <div class="featsolo">
-                                    <div class="iconfeat">
 
                                         <img src="img/1.svg" alt="">
-                                    </div>
                                     <h5>Power performance</h5>
                                 </div>
                                 <div class="featsolo">
@@ -250,10 +258,8 @@
                             <h2>TVR   <br> <span>Sagaris</span></h2>
                             <div class="feat">
                                 <div class="featsolo">
-                                    <div class="iconfeat">
 
                                         <img src="img/4.svg" alt="">
-                                    </div>
                                     <h5>Fuel-efficient</h5>
                                 </div>
                                 <div class="featsolo">
@@ -288,10 +294,8 @@
                                    <br> <span>Carrera </span></h2>
                             <div class="feat">
                                 <div class="featsolo">
-                                    <div class="iconfeat">
 
                                         <img src="img/7.svg" alt="">
-                                    </div>
                                     <h5>Zero emissions</h5>
                                 </div>
                                 <div class="featsolo">
@@ -328,10 +332,8 @@
                                  <br> <span>SU7</span></h2>
                             <div class="feat">
                                 <div class="featsolo">
-                                    <div class="iconfeat">
 
                                         <img src="img/1.svg" alt="">
-                                    </div>
                                     <h5>Power performance</h5>
                                 </div>
                                 <div class="featsolo">
@@ -365,10 +367,8 @@
                                  <br> <span>Hustara </span></h2>
                             <div class="feat">
                                 <div class="featsolo">
-                                    <div class="iconfeat">
 
                                         <img src="img/4.svg" alt="">
-                                    </div>
                                     <h5>Fuel-efficient</h5>
                                 </div>
                                 <div class="featsolo">
@@ -403,10 +403,8 @@
                                    <br> <span>Model 3</span></h2>
                             <div class="feat">
                                 <div class="featsolo">
-                                    <div class="iconfeat">
 
                                         <img src="img/7.svg" alt="">
-                                    </div>
                                     <h5>Zero emissions</h5>
                                 </div>
                                 <div class="featsolo">
@@ -441,7 +439,7 @@
         </section>
 
         <section class="brands">
-             <h1>Featured Models</h1>
+             <h1>Partner Brands</h1>
              <div class="brandsvw">
                 <div class="grad"></div>
                 <div class="grad2"></div>
