@@ -527,7 +527,8 @@ color: #FFF;
   
 
   .modelslist.has-active .modelcard.inactive model-viewer {
-    transform: translateX(20%) scale(0.9);
+    transform: translateX(20%) scale(1.1);
+    
   }
 
   .modelcard.active model-viewer {
