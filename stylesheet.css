@@ -1692,3 +1692,104 @@ line-height: 128.086%; /* 26.898px */
     border-radius: 20px;
     object-fit: cover;
 }
+
+.reviews{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 95px;
+    padding: 5vw 0;
+    flex-direction: column;
+}
+
+.reviewstit{
+    width: 60%;
+    display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+.reviewstit h1{
+    color: var(--white, #FFF);
+text-align: center;
+font-family: Montserrat;
+font-size: 42px;
+font-style: normal;
+font-weight: 300;
+line-height: 105%; /* 51.313px */
+}
+
+.reviewstit p{
+    color: var(--grey, #C0C2B7);
+text-align: center;
+font-family: Montserrat;
+font-size: 24.435px;
+font-style: normal;
+font-weight: 300;
+line-height: 105%; /* 25.657px */
+}
+.reviewstab{
+    width: 100%;
+    display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.reviewscont{
+display: flex;
+gap: 25px;
+height:42vh;
+width: 95%;
+}
+
+.reviewtab{
+    width: 34%;
+    height: 100%;
+    display: flex;
+padding: 29.525px 21.381px;
+flex-direction: column;
+align-items: flex-start;
+gap: 28.507px;
+border-radius: 21.381px;
+background: var(--white, #FFF);
+}
+
+.reviewtab p{
+    color: #000;
+font-family: Montserrat;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 130%; /* 22.5px */
+}
+
+.user{
+    display: flex;
+align-items: center;
+gap: 15.272px;
+align-self: stretch;
+}
+.username{
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+gap: 2.03
+}
+.username h5{
+    color: var(--body, #313131);
+font-family: Montserrat;
+font-size: 15.568px;
+font-style: normal;
+font-weight: 600;
+line-height: 18.162px; /* 116.667% */
+}
+
+.username span{
+    color: var(--black, #191917);
+font-family: Montserrat;
+font-size: 15.568px;
+font-style: normal;
+font-weight: 400;
+line-height: 18.162px; /* 116.667% */}
