@@ -149,3 +149,6 @@ burger.onclick = () => {
   closeX.onclick = () => {
     menu.classList.remove("active");
   };
+
+
+  
