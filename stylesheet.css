@@ -1319,10 +1319,11 @@ line-height: normal;
     display: inline-flex;
 align-items: center;
 justify-content: center;
+padding: 5vw 0;
 }
 
 .techcont{
-    width: 90%;
+    width: 95%;
 justify-content: space-between;
 display: flex;
 align-items: center;
@@ -1331,11 +1332,11 @@ align-items: center;
 
 .column1{
     display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
-gap: 93px;
-width: 40%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 54px;
+    width: 41%;
 }
 
 .column1 h2{
@@ -1387,17 +1388,249 @@ line-height: normal;
 
 .textafter{
     color: #FFF;
-font-family: Montserrat;
-font-size: 13px;
-font-style: normal;
-font-weight: 300;
-line-height: 154.88%; /* 24.781px */
-display: flex;
-padding: 20px 0 26px 0;
-align-items: center;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 154.88%; /* 24.781px */
+    display: flex;
+    padding: 20px 0 26px 0;
+    align-items: center;
 }
 
 .toggle{
     transition: transform 0.3s ease;
     cursor: pointer;
+}
+
+.column2{
+    width: 29%;
+}
+
+.column2 img{
+    width: 100%;
+    height: auto;
+}
+
+.column3{
+    width: 12%;
+    display: flex;
+flex-direction: column;
+align-items: center;
+gap: 66px;
+}
+
+.meascard{
+    display: flex;
+flex-direction: column;
+}
+
+.meascard h6{
+    color: #A0A0A0;
+text-align: center;
+font-family: Montserrat;
+font-size: 15.55px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.meascard h5{
+    color: #FFF;
+font-family: Montserrat;
+font-size: 21.81px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+text-align: center;
+}
+
+.modelediting{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5vw 0;
+}
+
+.modeleditingcont{
+    width: 95%;
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 29.525px;
+}
+
+.modeltitle_prod{
+    display: flex;
+justify-content: space-between;
+align-items: flex-start;
+align-self: stretch;
+}
+
+.modeltitle_prod h2{
+    color: #FFF;
+font-family: Montserrat;
+font-size: 40.79px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+
+.modeltitle_prod span{
+    color: #C0C2B7;
+text-align: right;
+font-family: Montserrat;
+font-size: 20.362px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+width:50%;
+}
+
+.model3d_product{
+    
+    width: 100%;
+    height: 55vh;
+}
+
+.taycan{
+    width: 100%;
+    height: 100%;
+}
+
+.editors{
+    display: flex;
+padding: 40.725px 0;
+justify-content: space-between;
+align-items: flex-start;
+border-top: 1.018px solid #C0C2B7;
+width: 100%;
+}
+
+.customize , .view{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 18.326px;
+flex-shrink: 0;
+width: 31%;
+}
+.colors{
+    display: flex;
+align-items: center;
+gap: 13.405px;
+align-self: stretch;
+}
+
+.grey{
+    width: 53.621px;
+height: 53.621px;
+background: #747474;
+border-radius: 200px;
+cursor: pointer;
+
+}
+
+.selectedcolor{
+    border: 1.5px solid #fff !important;
+}
+
+.red{
+    width: 53.621px;
+height: 53.621px;
+background: #890000;
+border-radius: 200px;
+cursor: pointer;
+
+
+}
+
+.black{
+    width: 53.621px;
+height: 53.621px;
+background: #000;
+border-radius: 200px;
+cursor: pointer;
+
+
+}
+
+.white{
+    width: 53.621px;
+height: 53.621px;
+background: #fff;
+cursor: pointer;
+
+border-radius: 200px;
+
+}
+
+.blue{
+    width: 53.621px;
+height: 53.621px;
+background: #1B2550;
+border-radius: 200px;
+cursor: pointer;
+
+}
+
+.customize h3 , .view h3{
+    color: #C0C2B7;
+font-family: Montserrat;
+font-size: 24.435px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+
+
+.views{
+    display: flex;
+align-items: flex-start;
+align-content: flex-start;
+gap: 14px 9.163px;
+flex-wrap: wrap;
+}
+
+.default , .top , .front , .left , .right , .back{
+display: flex;
+padding: 9px 42.761px;
+justify-content: center;
+align-items: center;
+gap: 10.181px;
+border-radius: 66.178px;
+border: 1.018px solid #FFF;
+color: #FFF;
+font-family: Montserrat;
+font-size: 20.362px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+transition: all 300ms ease;
+cursor: pointer;
+
+}
+
+.selectedview{
+    background: #FFF !important;
+    color: #191917 !important;
+}
+
+.top:hover , .front:hover , .left:hover , .right:hover , .back:hover , .default:hover{
+    background: #FFF;
+    color: #191917;
+    cursor: pointer;
+}
+
+.views > div {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+}
+
+.colors > div {
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
