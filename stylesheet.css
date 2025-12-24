@@ -1252,7 +1252,7 @@ padding: 0 2% 80px 2%;
 .prodname h3{
     color: #FFF;
 font-family: Montserrat;
-font-size: 32px;
+font-size: 2vw;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
@@ -1261,7 +1261,7 @@ line-height: normal;
 .prodname h5{
     color: #A0A0A0;
 font-family: Montserrat;
-font-size: 36px;
+font-size: 3vw;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
@@ -1285,7 +1285,7 @@ gap: 14.136px;
 .feature1 h6{
     color: #A0A0A0;
 font-family: Montserrat;
-font-size: 18.554px;
+font-size: 2vw;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
@@ -1295,7 +1295,7 @@ line-height: normal;
 color: #FFF;
 
 font-family: Montserrat;
-font-size: 31.807px;
+font-size: 2.5vw;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
@@ -1732,19 +1732,24 @@ line-height: 105%; /* 25.657px */
 .reviewstab{
     width: 100%;
     display: flex;
-justify-content: center;
 align-items: center;
+overflow: hidden;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 3vw;
+
 }
 
-.reviewscont{
-display: flex;
-gap: 25px;
-height:42vh;
-width: 95%;
+.reviewscont {
+    display: flex;
+    gap: 25px;
+    height: 42vh;
+    width: max-content;
+    transition: transform 0.4s ease; /* 👈 animation */
 }
 
 .reviewtab{
-    width: 34%;
+    width: 465px;
     height: 100%;
     display: flex;
 padding: 29.525px 21.381px;
@@ -1761,9 +1766,12 @@ font-family: Montserrat;
 font-size: 15px;
 font-style: normal;
 font-weight: 400;
+
 line-height: 130%; /* 22.5px */
 }
-
+.reviewmsg{
+    height: 97.5px;
+}
 .user{
     display: flex;
 align-items: center;
@@ -1793,3 +1801,97 @@ font-size: 15.568px;
 font-style: normal;
 font-weight: 400;
 line-height: 18.162px; /* 116.667% */}
+
+.arrows{
+    display: flex;
+    gap: 15px;
+}
+
+.backward , .forward{
+cursor: pointer;
+}
+
+@media (min-width: 600px) and (max-width: 1070px) {
+.prodmodel{
+    height: 42vh;
+}
+
+.curved{
+    bottom: -20px;
+    width: 84%;
+}
+
+.producttabs{
+    padding: 0 2% 40px 2%;
+}
+
+.textbef{
+    padding: 29px 18px;
+}
+
+.textafter{
+    font-size: 13px;
+}
+.column1{
+        width: 37%;
+        gap: 28px;
+}
+.techspec{
+    height: 84px;
+}
+.meascard h5{
+    font-size: 16px;
+}
+.modeltitle_prod span{
+    font-size: 14px;
+}
+
+.model3d_product{
+    height: 40vh;
+}
+.customize h3, .view h3{
+    font-size: 18px;
+}
+.views > div {
+    padding: 7px 17px;
+}
+.default, .top, .front, .left, .right, .back{
+    font-size: 14px;
+}
+.red ,.grey , .black , .white , .blue{
+    width: 40px;
+    height: 40px;
+}
+
+.customize{
+    width: 40%;
+}
+
+.productabout{
+    padding: 4vw 0;
+
+}
+.abouttext h1 , .reviewstit h1{
+    font-size: 30px;}
+
+.abouttext{
+    gap: 30px;
+}
+.abouttext p{
+    font-size: 14px;
+}
+.reviewstit p{
+    font-size: 16px;}
+
+.reviewstab p{
+    font-size: 13px;
+}
+.reviewscont{
+    height: 36vh;
+}
+
+.reviewtab{
+    width: 335px;
+}
+
+}

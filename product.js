@@ -135,3 +135,149 @@ viewButtons.forEach(button => {
         });
     });
 });
+
+
+const reviewTabs = [
+  {
+    quoteIcon: "img/comma.svg",
+    text: "The driving experience has exceeded all my expectations. The car feels incredibly stable on the road, even at high speeds, and the acceleration is smooth without any delay.",
+    userImg: "img/user1.png",
+    name: "Omar Kareem",
+    city: "Cairo"
+  },
+  {
+    quoteIcon: "img/comma.svg",
+    text: "I use this car daily for long commutes, and it has been extremely comfortable. The interior is quiet, the suspension handles rough roads well.",
+    userImg: "img/user2.png",
+    name: "Mona Hassan",
+    city: "Giza"
+  },
+  {
+    quoteIcon: "img/comma.svg",
+    text: "What I love most is how responsive the steering is. Whether I’m driving in the city or on highways, the control feels precise and confident.",
+    userImg: "img/user3.png",
+    name: "Ahmed Salah",
+    city: "Alexandria"
+  },
+  {
+    quoteIcon: "img/comma.svg",
+    text: "Fuel consumption is way better than I expected for a car with this level of performance. It balances power and efficiency perfectly.",
+    userImg: "img/user2.png",
+    name: "Sara Mahmoud",
+    city: "Mansoura"
+  },
+  {
+    quoteIcon: "img/comma.svg",
+    text: "The design instantly caught my attention, but the real surprise was how smooth the ride feels. Even after hours of driving, I don’t feel tired.",
+    userImg: "img/user1.png",
+    name: "Youssef Adel",
+    city: "New Cairo"
+  },
+  {
+    quoteIcon: "img/comma.svg",
+    text: "Safety features give me real peace of mind. The car feels solid, well-built, and very reliable in different driving conditions.",
+    userImg: "img/user3.png",
+    name: "Nour ElDin",
+    city: "Heliopolis"
+  },
+  {
+    quoteIcon: "img/comma.svg",
+    text: "Acceleration is powerful yet smooth, which makes overtaking on highways feel effortless. It’s a very confidence-inspiring car.",
+    userImg: "img/user1.png",
+    name: "Khaled Mostafa",
+    city: "Nasr City"
+  },
+  {
+    quoteIcon: "img/comma.svg",
+    text: "After months of use, I can honestly say this car delivers consistent performance and comfort. It feels premium in every detail.",
+    userImg: "img/user5.png",
+    name: "Laila Samir",
+    city: "Maadi"
+  }
+];
+
+
+const reviewsContainer = document.querySelector(".reviewscont");
+
+reviewsContainer.innerHTML = "";
+
+for (let i = 0; i < reviewTabs.length; i++) {
+  reviewsContainer.innerHTML += `
+    <div class="reviewtab">
+      <img src="${reviewTabs[i].quoteIcon}" alt="">
+      <div class = "reviewmsg">
+      <p>${reviewTabs[i].text}</p>
+      </div>
+      <div class="user">
+        <img src="${reviewTabs[i].userImg}" alt="">
+        <div class="username">
+          <h5>${reviewTabs[i].name}</h5>
+          <span>${reviewTabs[i].city}</span>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const reviewsCont = document.querySelector(".reviewscont");
+  const nextBtn = document.querySelector(".forward");
+  const prevBtn = document.querySelector(".backward");
+  const reviewstab = document.querySelector(".reviewstab");
+
+  const gap = 25;
+  let currentIndex = 0;
+
+  function getCardWidth() {
+    if (window.innerWidth >= 600 && window.innerWidth <= 1070) {
+      return 335;
+    }
+    return 465;
+  }
+
+  function updateSettings() {
+    const cardWidth = getCardWidth();
+    const step = cardWidth + gap;
+
+    const visibleCards = Math.max(
+      1,
+      Math.floor(reviewstab.offsetWidth / step)
+    );
+
+    const maxIndex = Math.max(
+      0,
+      reviewTabs.length - visibleCards
+    );
+
+    return { step, maxIndex };
+  }
+
+  function updateSlider() {
+    const { step } = updateSettings();
+    reviewsCont.style.transform = `translateX(-${currentIndex * step}px)`;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    const { maxIndex } = updateSettings();
+
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+      updateSlider();
+    }
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlider();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    currentIndex = 0;
+    updateSlider();
+  });
+
+});
