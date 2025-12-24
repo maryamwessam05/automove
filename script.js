@@ -22,7 +22,7 @@ function activateFromButton(event, button) {
 
       if (viewer.dataset.model === 'revani') {
         viewer.setAttribute('field-of-view', '16deg');
-      } else if (viewer.dataset.model === 'tvr') {
+      } else if (viewer.dataset.model === 'tvr' || viewer.dataset.model === 'merc') {
         viewer.setAttribute('field-of-view', '15deg'); 
       } else if (viewer.dataset.model === 'su7' || viewer.dataset.model === 'arri') {
         viewer.setAttribute('field-of-view', '13deg'); 

@@ -1,4 +1,3 @@
-// Burger menu functionality
 let burger = document.querySelector(".burger");
 let menu = document.querySelector(".burgermenu");
 let closeX = document.getElementById("x");
@@ -13,7 +12,6 @@ if (burger && menu && closeX) {
     };
 }
 
-// Tech specs accordion
 document.addEventListener('DOMContentLoaded', function() {
     const toggles = document.querySelectorAll('.toggle');
     
@@ -43,12 +41,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Model viewer customization
 const modelViewer = document.querySelector('.taycan');
 const colorButtons = document.querySelectorAll('.colors > div');
 const viewButtons = document.querySelectorAll('.views > div');
 
-// Camera orbit positions for different views
 const cameraOrbits = {
     default: '-93.19deg 83.69deg 8.614m',
     top: '-91.04deg 0.79deg 8.736m',
@@ -58,11 +54,10 @@ const cameraOrbits = {
     back: '180deg 90deg 8.614m'
 };
 
-// Color definitions in RGBA format (normalized 0-1)
 const colors = {
     black: null,  
-    red: [1, 0, 0, 1],          // Pure bright red
-    gold: [1, 0.78, 0, 1]       // Bright gold (#FFC700)
+    red: [1, 0, 0, 1],          
+    gold: [1, 0.78, 0, 1]       
 };
 
 let originalMaterials = [];
@@ -70,14 +65,12 @@ let originalMaterials = [];
 if (modelViewer) {
     console.log('Model viewer found, waiting for load...');
     
-    // Wait for model to load before enabling color customization
     modelViewer.addEventListener('load', async () => {
         console.log('BMW M2 model loaded successfully!');
         
         const materials = modelViewer.model.materials;
         console.log('Number of materials found:', materials.length);
         
-        // Ensure all materials are loaded first
         for (let i = 0; i < materials.length; i++) {
             await materials[i].ensureLoaded();
             console.log(`Material ${i}: ${materials[i].name}`);
@@ -90,7 +83,6 @@ if (modelViewer) {
             });
         }
         
-        // Color customization
         colorButtons.forEach((button, index) => {
             console.log(`Adding click listener to color button ${index}`);
             button.addEventListener('click', async function() {
@@ -128,17 +120,13 @@ if (modelViewer) {
                     await material.ensureLoaded();
                     const materialName = material.name.toLowerCase();
                     
-                    // Only change the "painted carbon" material
                     if (materialName.includes('painted') && materialName.includes('carbon')) {
-                        // Set the base color
                         material.pbrMetallicRoughness.setBaseColorFactor(colorArray);
                         
-                        // Remove texture to show solid color
                         material.pbrMetallicRoughness.baseColorTexture = null;
                         
-                        // Adjust metallic and roughness for better color visibility
-                        material.pbrMetallicRoughness.setMetallicFactor(0.8);  // More metallic shine
-                        material.pbrMetallicRoughness.setRoughnessFactor(0.3); // Less rough, more reflective
+                        material.pbrMetallicRoughness.setMetallicFactor(0.8);  
+                        material.pbrMetallicRoughness.setRoughnessFactor(0.3); 
                         
                         changedCount++;
                     }
@@ -148,7 +136,6 @@ if (modelViewer) {
         });
     });
 
-    // View angle buttons
     viewButtons.forEach(button => {
         button.addEventListener('click', function() {
             viewButtons.forEach(btn => btn.classList.remove('selectedview'));
@@ -167,67 +154,66 @@ if (modelViewer) {
     console.error('Model viewer element not found!');
 }
 
-// Reviews data and carousel
 const reviewTabs = [
     {
         quoteIcon: "img/comma.svg",
-        text: "The driving experience has exceeded all my expectations. The car feels incredibly stable on the road, even at high speeds, and the acceleration is smooth without any delay.",
-        userImg: "img/user1.png",
-        name: "Omar Kareem",
+        text: "Driving the I-PACE has completely changed my perception of electric cars. The acceleration is seamless and the ride feels incredibly refined.",
+        userImg: "img/user2.png",
+        name: "Hana ElShazly",
         city: "Cairo"
     },
     {
         quoteIcon: "img/comma.svg",
-        text: "I use this car daily for long commutes, and it has been extremely comfortable. The interior is quiet, the suspension handles rough roads well.",
-        userImg: "img/user2.png",
-        name: "Mona Hassan",
-        city: "Giza"
-    },
-    {
-        quoteIcon: "img/comma.svg",
-        text: "What I love most is how responsive the steering is. Whether I'm driving in the city or on highways, the control feels precise and confident.",
+        text: "I enjoy my daily commutes more than ever. The cabin is quiet, comfortable, and packed with intuitive technology.",
         userImg: "img/user3.png",
-        name: "Ahmed Salah",
+        name: "Tamer Nabil",
         city: "Alexandria"
     },
     {
         quoteIcon: "img/comma.svg",
-        text: "Fuel consumption is way better than I expected for a car with this level of performance. It balances power and efficiency perfectly.",
+        text: "The steering and handling are exceptional. Whether in traffic or on the highway, the car feels responsive and controlled.",
+        userImg: "img/user1.png",
+        name: "Sara Mostafa",
+        city: "Giza"
+    },
+    {
+        quoteIcon: "img/comma.svg",
+        text: "Battery efficiency and range are impressive. I can drive long distances without worrying about charging frequently.",
         userImg: "img/user2.png",
-        name: "Sara Mahmoud",
+        name: "Omar Hafez",
         city: "Mansoura"
     },
     {
         quoteIcon: "img/comma.svg",
-        text: "The design instantly caught my attention, but the real surprise was how smooth the ride feels. Even after hours of driving, I don't feel tired.",
-        userImg: "img/user1.png",
-        name: "Youssef Adel",
+        text: "The design immediately drew me in. Even after hours on the road, the ride is smooth and comfortable.",
+        userImg: "img/user3.png",
+        name: "Nour Adel",
         city: "New Cairo"
     },
     {
         quoteIcon: "img/comma.svg",
-        text: "Safety features give me real peace of mind. The car feels solid, well-built, and very reliable in different driving conditions.",
-        userImg: "img/user3.png",
-        name: "Nour ElDin",
+        text: "I feel completely safe with the I-PACE. The build quality and advanced safety features make it very reliable in any condition.",
+        userImg: "img/user1.png",
+        name: "Khaled Ibrahim",
         city: "Heliopolis"
     },
     {
         quoteIcon: "img/comma.svg",
-        text: "Acceleration is powerful yet smooth, which makes overtaking on highways feel effortless. It's a very confidence-inspiring car.",
-        userImg: "img/user1.png",
-        name: "Khaled Mostafa",
+        text: "Overtaking is effortless thanks to the smooth and powerful acceleration. It gives me a lot of confidence on the road.",
+        userImg: "img/user2.png",
+        name: "Mona Samir",
         city: "Nasr City"
     },
     {
         quoteIcon: "img/comma.svg",
-        text: "After months of use, I can honestly say this car delivers consistent performance and comfort. It feels premium in every detail.",
-        userImg: "img/user2.png",
-        name: "Laila Samir",
+        text: "After months of driving, I can confidently say it delivers premium comfort and consistent performance in every drive.",
+        userImg: "img/user3.png",
+        name: "Youssef Farouk",
         city: "Maadi"
     }
 ];
 
-// Populate reviews on page load
+
 document.addEventListener('DOMContentLoaded', function() {
     const reviewsContainer = document.querySelector(".reviewscont");
     
@@ -254,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Reviews carousel functionality
+
 document.addEventListener("DOMContentLoaded", () => {
     const reviewsCont = document.querySelector(".reviewscont");
     const nextBtn = document.querySelector(".forward");
@@ -262,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     if (!reviewsCont || !nextBtn || !prevBtn) return;
     
-    // Wait a bit for reviews to be populated
+
     setTimeout(() => {
         const cards = document.querySelectorAll(".reviewtab");
         
