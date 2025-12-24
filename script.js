@@ -1,3 +1,37 @@
+let hero = document.querySelector('.hero');
+let row1 = document.querySelector('.row1_hero');
+let row2 = document.querySelector('.herotitle');
+let row3 = document.querySelector('.heromodel');
+
+hero.onmouseenter = function () {
+
+            row1.style.opacity = "1";
+            row1.style.transform = "translateY(0)";
+            row2.style.opacity = "1";
+            row2.style.transform = "translateY(0)";
+            row3.style.opacity = "1";
+            row3.style.transform = "translateY(0)";
+          
+        }
+
+
+let abtcont = document.querySelector('.about');
+let half1 = document.querySelector('.half1_abt');
+let half2 = document.querySelector('.half2_abt');
+
+hero.onmouseenter = function () {
+
+            half1.style.opacity = "1";
+            half1.style.transform = "translateY(0)";
+            half2.style.opacity = "1";
+            half2.style.transform = "translateY(0)";
+        
+          
+        }
+
+
+
+
 function activateFromButton(event, button) {
   event.stopPropagation();
 

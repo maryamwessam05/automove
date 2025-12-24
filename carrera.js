@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
         let burger = document.querySelector(".burger");
         let menu = document.querySelector(".burgermenu");
         let closeX = document.getElementById("x");
@@ -43,87 +44,129 @@ burger.onclick = () => {
     menu.classList.remove("active");
   };
 
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const modelViewer = document.querySelector('.taycan');
     const colorButtons = document.querySelectorAll('.colors > div');
     const viewButtons = document.querySelectorAll('.views > div');
     
     const cameraOrbits = {
-        default: '-49.57deg 81.12deg 8.116m',
-        top: '-91.04deg 0.79deg 8.736m',
-        front: '0deg 90deg 8.116m',
-        left: '-90deg 90deg 8.116m',
-        right: '90deg 90deg 8.116m',
-        back: '180deg 90deg 8.116m'
+        default: '-55.29deg 81.52deg 9.508m',
+        top: '-91.04deg 0.79deg 9.508m',
+        front: '0deg 90deg 9.508m',
+        left: '-90deg 90deg 9.508m',
+        right: '90deg 90deg 9.508m',
+        back: '180deg 90deg 9.508m'
     };
     
+    const bodyMaterialNames = [
+        'LOD_A_BODY_mm_ext_Mat',
+        'LOD_A_DOOR_RIGHT_mm_ext_Mat',
+        'LOD_A_HOOD_mm_ext_Mat',
+        'LOD_A_FRONTBUMPER_mm_ext_Mat',
+        'LOD_A_DOOR_LEFT_mm_ext_Mat'
+    ];
+    
+    const colors = {
+        black: null,  
+        red: [1, 0, 0, 1],          
+        blue: [0, 0.3, 1, 1]         
+    };
 
+    let originalMaterials = [];
+    let originalTextures = [];
+    let originalMetallic = [];
+    let originalRoughness = [];
+
+    modelViewer.addEventListener('load', () => {
+        console.log('Model loaded');
         
-const colors = {
- grey: null,  
-    red: [0.3, 0.01, 0.01, 1],        
-    black: [0.02, 0.02, 0.02, 1],      
-    white: [0.85, 0.85, 0.88, 1],    
-    blue: [0, 0.02, 0.15, 1]   
-};
-
-
-let originalMaterials = [];
-
-modelViewer.addEventListener('load', () => {
-    console.log('Model loaded');
-    
-    const materials = modelViewer.model.materials;
-    materials.forEach(material => {
-        originalMaterials.push({
-            material: material,
-            originalColor: material.pbrMetallicRoughness.baseColorFactor.slice()
-        });
-    });
-    
-
-    colorButtons.forEach(button => {
-        button.addEventListener('click', function() {
-
-            colorButtons.forEach(btn => btn.classList.remove('selectedcolor'));
+        const materials = modelViewer.model.materials;
+        
+        
+        materials.forEach(material => {
+            originalMaterials.push({
+                material: material,
+                originalColor: material.pbrMetallicRoughness.baseColorFactor.slice()
+            });
             
-            this.classList.add('selectedcolor');
-            
-            const colorClass = this.className.split(' ')[0];
-            const colorArray = colors[colorClass];
-            
-            if (colorArray === null) {
-                originalMaterials.forEach(item => {
-                    item.material.pbrMetallicRoughness.setBaseColorFactor(item.originalColor);
+
+            if (bodyMaterialNames.includes(material.name)) {
+                originalTextures.push({
+                    material: material,
+                    originalTexture: material.pbrMetallicRoughness.baseColorTexture
                 });
-                return;
+                originalMetallic.push({
+                    material: material,
+                    originalMetallic: material.pbrMetallicRoughness.metallicFactor
+                });
+                originalRoughness.push({
+                    material: material,
+                    originalRoughness: material.pbrMetallicRoughness.roughnessFactor
+                });
             }
             
-            const materials = modelViewer.model.materials;
-            
-            for (let i = 0; i < materials.length; i++) {
-                const material = materials[i];
+            console.log('Material found:', material.name);
+        });
+        
+
+        colorButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                colorButtons.forEach(btn => btn.classList.remove('selectedcolor'));
+                this.classList.add('selectedcolor');
                 
-                const materialName = material.name.toLowerCase();
+                const colorClass = this.className.split(' ')[0];
+                const colorArray = colors[colorClass];
                 
-                if (!materialName.includes('glass') && 
-                    !materialName.includes('chrome') && 
-                    !materialName.includes('light') &&
-                    !materialName.includes('window') &&
-                    !materialName.includes('transparent')) {
+
+                if (colorArray === null) {
+                    originalMaterials.forEach(item => {
+                        if (bodyMaterialNames.includes(item.material.name)) {
+                            item.material.pbrMetallicRoughness.setBaseColorFactor(item.originalColor);
+                        }
+                    });
                     
-                    material.pbrMetallicRoughness.setBaseColorFactor(colorArray);
+
+                    originalTextures.forEach(item => {
+                        item.material.pbrMetallicRoughness.baseColorTexture = item.originalTexture;
+                    });
+                    
+
+                    originalMetallic.forEach(item => {
+                        item.material.pbrMetallicRoughness.setMetallicFactor(item.originalMetallic);
+                    });
+                    originalRoughness.forEach(item => {
+                        item.material.pbrMetallicRoughness.setRoughnesssFactor(item.originalRoughness);
+                    });
+                    return;
                 }
-            }
+                
+
+                const materials = modelViewer.model.materials;
+                for (let i = 0; i < materials.length; i++) {
+                    const material = materials[i];
+                    
+                    if (bodyMaterialNames.includes(material.name)) {
+
+                      material.pbrMetallicRoughness.baseColorTexture = null;
+                        
+
+                      material.pbrMetallicRoughness.setBaseColorFactor(colorArray);
+                        
+
+                      material.pbrMetallicRoughness.setMetallicFactor(1.0);   // Maximum metallic
+                        material.pbrMetallicRoughness.setRoughnessFactor(0.1);  // Very glossy
+                    }
+                }
+            });
         });
     });
-});
 
-viewButtons.forEach(button => {
+    viewButtons.forEach(button => {
         button.addEventListener('click', function() {
-
             viewButtons.forEach(btn => btn.classList.remove('selectedview'));
-            
             this.classList.add('selectedview');
             
             const viewClass = this.className.split(' ')[0];

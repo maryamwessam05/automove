@@ -49,19 +49,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const viewButtons = document.querySelectorAll('.views > div');
     
     const cameraOrbits = {
-        default: '-49.57deg 81.12deg 8.116m',
-        top: '-91.04deg 0.79deg 8.736m',
-        front: '0deg 90deg 8.116m',
-        left: '-90deg 90deg 8.116m',
-        right: '90deg 90deg 8.116m',
-        back: '180deg 90deg 8.116m'
-    };
+    default: '-49.57deg 81.12deg 0.1036m',
+    top: '-91.04deg 0.79deg 0.1036m',
+    front: '0deg 90deg 0.1036m',
+    left: '-90deg 90deg 0.1036m',
+    right: '90deg 90deg 0.1036m',
+    back: '180deg 90deg 0.1036m'
+};
     
 
         
 const colors = {
- grey: null,  
-    red: [0.3, 0.01, 0.01, 1],        
+ orange: null,  
+    yellow: [0.816, 0.651, 0, 1],        
     black: [0.02, 0.02, 0.02, 1],      
     white: [0.85, 0.85, 0.88, 1],    
     blue: [0, 0.02, 0.15, 1]   
