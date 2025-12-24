@@ -190,7 +190,7 @@ const reviewTabs = [
   {
     quoteIcon: "img/comma.svg",
     text: "After months of use, I can honestly say this car delivers consistent performance and comfort. It feels premium in every detail.",
-    userImg: "img/user5.png",
+    userImg: "img/user2.png",
     name: "Laila Samir",
     city: "Maadi"
   }
@@ -221,48 +221,30 @@ for (let i = 0; i < reviewTabs.length; i++) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-
   const reviewsCont = document.querySelector(".reviewscont");
   const nextBtn = document.querySelector(".forward");
   const prevBtn = document.querySelector(".backward");
-  const reviewstab = document.querySelector(".reviewstab");
+  const cards = document.querySelectorAll(".reviewtab");
 
   const gap = 25;
   let currentIndex = 0;
 
   function getCardWidth() {
-    if (window.innerWidth >= 600 && window.innerWidth <= 1070) {
+    if (window.innerWidth >= 300 && window.innerWidth <= 600) {
+      return 300;
+    } else if (window.innerWidth >= 600 && window.innerWidth <= 1070) {
       return 335;
     }
     return 465;
   }
 
-  function updateSettings() {
-    const cardWidth = getCardWidth();
-    const step = cardWidth + gap;
-
-    const visibleCards = Math.max(
-      1,
-      Math.floor(reviewstab.offsetWidth / step)
-    );
-
-    const maxIndex = Math.max(
-      0,
-      reviewTabs.length - visibleCards
-    );
-
-    return { step, maxIndex };
-  }
-
   function updateSlider() {
-    const { step } = updateSettings();
+    const step = getCardWidth() + gap;
     reviewsCont.style.transform = `translateX(-${currentIndex * step}px)`;
   }
 
   nextBtn.addEventListener("click", () => {
-    const { maxIndex } = updateSettings();
-
-    if (currentIndex < maxIndex) {
+    if (currentIndex < cards.length - 1) {
       currentIndex++;
       updateSlider();
     }
@@ -275,9 +257,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  window.addEventListener("resize", () => {
-    currentIndex = 0;
-    updateSlider();
-  });
-
+  window.addEventListener("resize", updateSlider);
 });
